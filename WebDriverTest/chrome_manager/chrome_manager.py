@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import os
 import json
 
-with open(r'C:\Users\Rafael Braga\Bots\WebDriverTest\config.json', 'r') as config_file:
+with open(r'WebDriverTest\config.json', 'r') as config_file:
     config = json.load(config_file)
 
 class WebDriverManager:

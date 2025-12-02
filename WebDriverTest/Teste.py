@@ -5,9 +5,11 @@ from datetime import datetime, timedelta
 from chrome_manager.chrome_manager import WebDriverManager
 import json
 import csv
+import openpyxl
 import pyperclip
 
 # Le arquivo config.json
+
 with open('WebDriverTest\config.json', 'r') as config_file:
     config = json.load(config_file)
 
@@ -21,22 +23,6 @@ driver_manager = WebDriverManager(download_directory)
 navegador = driver_manager.create_driver()
 
 # Now you can use the 'navegador' WebDriver instance in your automation script
-navegador.get("https://www.example.com")
-time.sleep(2)
-# Open a new tab
-navegador.execute_script("window.open('');")
-# Switch to the new tab
-navegador.switch_to.window(navegador.window_handles[1])
-time.sleep(5)
-# Load a different page in the new tab
-navegador.get('https://www.google.com')
-time.sleep(5)
-# Switch back to the first tab
-navegador.switch_to.window(navegador.window_handles[0])
-time.sleep(2)
-
-# Continue working with the first tab
-# ...
-
-# Close the browser
+navegador.get("https://google.com")
+time.sleep(10)
 navegador.quit()
